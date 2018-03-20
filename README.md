@@ -1,8 +1,6 @@
-## <a class='titleLinks' id='interpreter-install'>Installing the elementsJS Interpreter</a>   
-### Using gulp.js  [<img src='http://media-cache-ak0.pinimg.com/736x/a7/7e/81/a77e816ed0b0c1ed28d60b6b9d4860b1.jpg' height='60px'/>](http://gulpjs.com/)
-If you don't know how to use gulp, you can find a nice tutorial [here](http://www.sitepoint.com/introduction-gulp-js/). First, you will need to install the gulp-elementsJS-interpreter package (Along with gulp and any other plug-ins you'll be using). It is available on npm's registry:
-
-```
+# gulp-autopatch
+### A gulp plugin for monitoring and automatically re-publishing and semver incrementing npm packages/modules.
+<!-- ```
 $ npm i --save-dev gulp-elementsJS-interpreter
 ```
 
@@ -75,4 +73,4 @@ elemsJS.make('#foo', 'button');
 
 utils.buildMenu();
 ```
-# [Click Here for the full elementsJS API](http://elementsjs.io)
+# [Click Here for the full elementsJS API](http://elementsjs.io) -->
