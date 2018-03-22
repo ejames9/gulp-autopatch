@@ -65,7 +65,7 @@ function npmAutopatch(packageRoot) {
   patchedArray =(versionArr)=>
     versionArr.map((num, ix)=>
       (ix === 2)?
-        num++
+        ++num
       :
         num
     )
@@ -168,9 +168,9 @@ function npmAutopatch(packageRoot) {
       } else {
 // Narrative user update...
         if (patch) {
-          info(`\n...............\n${packageJSON.name}'s version "patch" parameter was incremented by one.\n ...............`)
+          info(`...............\n\n${packageJSON.name}'s version "patch" parameter was incremented by one.\n ...............\n`)
         } else {
-          info(`\n...............\n${packageJSON.name}'s version "minor" parameter was incremented by one.\n ...............`)
+          info(`...............\n\n${packageJSON.name}'s version "minor" parameter was incremented by one.\n ...............\n`)
         }
 // Republish...
         rePublish()
