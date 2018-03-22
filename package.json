@@ -1,36 +1,38 @@
 {
-  "name": "gulp-elementsjs-interpreter",
-  "version": "1.8.9",
+  "name": "gulp-autopatch",
+  "version": "0.1.0",
   "author": "Eric James Foster",
-  "description": "parses files for elementsJS syntax, and replaces it with 'legal' elementsJS alias functions",
+  "description": "A gulp plugin for monitoring and automatically re-publishing and semver incrementing npm packages/modules.",
   "main": "index.js",
   "dependencies": {
-    "asyncawait": "^1.0.3",
-    "elementsJS": "^0.9.18",
-    "event-stream": "^3.3.2",
-    "gulp-util": "^3.0.7",
-    "lodash": "^4.13.1",
-    "webpack-sources": "^0.1.1"
+    "elementsJS": "^0.9.18"
   },
   "devDependencies": {
     "assert": "^1.3.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^2.2.0",
-    "mocha": "2.4.5",
-    "vinyl": "^1.1.1",
-    "vinyl-fs": "^2.3.1"
+    "mocha": "2.4.5"
   },
   "scripts": {
     "test": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ejames9/gulp-elementsJS-interpreter.git"
+    "url": "git+https://github.com/ejames9/gulp-npmAutopatch.git"
   },
-  "keywords": [],
-  "license": "ISC",
+  "keywords": [
+    "npm",
+    "publish",
+    "auto-publish",
+    "patch",
+    "auto-patch",
+    "package",
+    "update",
+    "auto-update"
+  ],
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ejames9/gulp-elementsJS-interpreter/issues"
+    "url": "https://github.com/ejames9/gulp-npmAutopatch/issues"
   },
-  "homepage": "https://github.com/ejames9/gulp-elementsJS-interpreter#readme"
+  "homepage": "https://github.com/ejames9/gulp-npmAutopatch#readme"
 }
