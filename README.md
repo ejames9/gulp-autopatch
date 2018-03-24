@@ -1,76 +1,46 @@
 # gulp-autopatch
+
 ### A gulp plugin for monitoring and automatically re-publishing and semver incrementing npm packages/modules.
-<!-- ```
-$ npm i --save-dev gulp-elementsJS-interpreter
+## Installation
+### npm:
+```
+$ npm i gulp-autopatch --save-dev
+```
+## Usage:
+I developed this package alongside another package, [**gulp-keylistener**](https://www.npmjs.com/package/gulp-keylistener), and it works very well with it. It will of course work without it, but i'd recommend checking it out for cueing the package updates when you want them. The example below will be using the `gulp-keylistener` package.
+```js
+const patcher = require('gulp-autopatch')
+```
+Then you may use it like such:
+
+```js
+const packageRootPath = 'path/to/your/amazing/npmModule'
+// Our default task...
+gulp.task('default', ()=> {
+// This function is from the `gulp-keylistener` package...
+  gulp.keys((ch, key)=> {
+// if you pressed `ctrl-p`
+    if (key.ctrl && key.name === 'p') {
+// Run the patcher...
+      patcher(packageRootPath)
+    }
+  })
+})
+```
+The only argument the patcher needs is either a relative or absolute path to your npm module.
+
+**-NOTE** If the working directory of the package you are trying to update is not clean (There are unstaged and committed changes), the patcher will attempt to autoclean the directory, re-patch then republish. If there is still an error after the autoclean, the patcher will fail.
+
+You may add a `patchLimit` property to the package you are updating to automatically trigger a `minor` update bump when the patch limit has been
+exceeded. For example, if we ran the patcher for the 200th time on the below package, the version would update from "0.1.199" to "0.2.0".
+```json
+{
+  "name": "gulp-keylistener",
+  "version": "0.1.7",
+  "description": "Adds a `keys` function to the gulp object which can be used for listening for/reacting to keystrokes..",
+  "main": "index.js",
+  "patchLimit": 199
+}
 ```
 
-In case you are new to npm, the *--save-dev* simply lists the package as one of your **devDependencies** in your application's *package.json* file. To use the interpreter, see below:
-
-```javascript
-
-```
-
-
-
-
-
-
-# <a class='titleLinks' id='imports'>The imports() function</a>
---
-The **`imports()`** function is a convenience function that allows the quick importing of many modules and/or module functions all at once. It is not necessary to use this function in order to use the library, it just makes it quicker/easier to import all of its' functions separately.
-
-- Note- Use of this function requires compilation by the **elementsJS-interpreter**.
-
-In order to use the imports function, it must first be imported from the module as such:
-
-```javascript
-var imports = require('elementsJS').imports;
-```
-or,
-
-```javascript
-import { imports } from 'elementsJS';
-```
-## `imports( {module: funcs/moduleAlias} )`
-
-#### Arguments
-
-1. **`{module: funcs or moduleAlias}`** (object) - An object, the key of which is the name of a module (string) **ex. 'lodash'**, and the value is either a list of functions (array) **ex. `['make', 'go']`**, or the variable name given to the module being imported (string) **ex.** `'_'`, for **lodash**.
-
-**Returns**: nuffin.
-
-#### Usage
-
-The imports function can be used to conveniently import individual functions from modules, or entire modules. If functions will be imported from the module individually, usage is as below:
-
-```javascript
-imports({
-	'elementsJS': ['make', 'go', 'dom', 'on'],
-   '../js/utils': ['buildMenu'], // << see Note below *
-	    'lodash': '_'
-});
-//functions are used like so:
-
-make('#foo', 'button');
-
-buildMenu();
-```
-
-- Note that if only 1 function is being imported, an array still needs to be used, otherwise, the entire module will be imported. See below.
-
-
-Entire modules can be imported like so:
-
-```javascript
-imports({
-	'elementsJS': 'elemsJS',
-   '../js/utils': 'utils',
-	    'lodash': '_',
-});
-//functions are used like so:
-
-elemsJS.make('#foo', 'button');
-
-utils.buildMenu();
-```
-# [Click Here for the full elementsJS API](http://elementsjs.io) -->
+This package grew out of a very specific need for me. Hopefully you may find it useful too. Happy Coding!!
