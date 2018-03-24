@@ -15,6 +15,7 @@ Then you may use it like such:
 
 ```js
 const packageRootPath = 'path/to/your/amazing/npmModule'
+
 // Our default task...
 gulp.task('default', ()=> {
 // This function is from the `gulp-keylistener` package...
